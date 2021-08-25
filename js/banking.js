@@ -14,12 +14,12 @@ document.getElementById('deposite-btn').addEventListener('click',function(){
     const depositeInput = getInputValue('deposite-input'); 
     const depositeTotalField = document.getElementById('deposite-total');
     const depositeTotal = parseFloat(depositeTotalField.innerText);
+    depositeTotalField.innerText = depositeTotal + depositeInput;
+
+    
     const balanceTotalField = document.getElementById('balance-total');
     const balanceTotal = parseFloat(balanceTotalField.innerText);
-    const newDepositeTotal = depositeTotal + depositeInput;
-    depositeTotalField.innerText = newDepositeTotal;
-    const newBalanceTotal = balanceTotal + depositeInput;
-    balanceTotalField.innerText = newBalanceTotal;
+    balanceTotalField.innerText = balanceTotal + depositeInput;
 
     
 })
@@ -28,13 +28,12 @@ document.getElementById('withdraw-btn').addEventListener('click',function(){
     const withdrawInput = parseFloat(withdrawInputField.value); */    
     const withdrawInput = getInputValue('withdraw-input');
     const withdrawTotalField = document.getElementById('withdraw-total');
-    const withdrawTotal = parseFloat(withdrawTotalField.innerText);
+    const withdrawTotal = parseFloat(withdrawTotalField.innerText); 
+    withdrawTotalField.innerText = withdrawTotal + withdrawInput;
+
     const balanceTotalField = document.getElementById('balance-total');
-    const balanceTotal = parseFloat(balanceTotalField.innerText);
-    const newWithdrawTotal = withdrawTotal + withdrawInput;
-    withdrawTotalField.innerText = newWithdrawTotal;
-    const newBalanceTotal = balanceTotal - withdrawInput;
-    balanceTotalField.innerText = newBalanceTotal;
+    const balanceTotal = parseFloat(balanceTotalField.innerText);    
+    balanceTotalField.innerText = balanceTotal - withdrawInput;
 
 
 })
