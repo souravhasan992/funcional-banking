@@ -26,31 +26,39 @@ function updateBalance(depositeInput, isAdd){
 document.getElementById('deposite-btn').addEventListener('click',function(){
     /* const depositeInputField = document.getElementById('deposite-input');
     const depositeInput = parseFloat(depositeInputField.value);  */  
-    const depositeInput = getInputValue('deposite-input'); 
+     
     /* const depositeTotalField = document.getElementById('deposite-total');
     const depositeTotal = parseFloat(depositeTotalField.innerText);
     depositeTotalField.innerText = depositeTotal + depositeInput; */
-    updateTotalField('deposite-total',depositeInput);
+    
     
     /* const balanceTotalField = document.getElementById('balance-total');
     const balanceTotal = parseFloat(balanceTotalField.innerText);
     balanceTotalField.innerText = balanceTotal + depositeInput; */
-    updateBalance(depositeInput, true)
-    
+    const depositeInput = getInputValue('deposite-input');
+    if( depositeInput > 0){
+        updateTotalField('deposite-total',depositeInput);
+        updateBalance(depositeInput, true);
+    }        
 })
+
+
 document.getElementById('withdraw-btn').addEventListener('click',function(){
     /* const withdrawInputField = document.getElementById('withdraw-input');
     const withdrawInput = parseFloat(withdrawInputField.value); */    
-    const withdrawInput = getInputValue('withdraw-input');
+    
    /*  const withdrawTotalField = document.getElementById('withdraw-total');
     const withdrawTotal = parseFloat(withdrawTotalField.innerText); 
     withdrawTotalField.innerText = withdrawTotal + withdrawInput; */
-
-    updateTotalField('withdraw-total',withdrawInput);
+    
 
     /* const balanceTotalField = document.getElementById('balance-total');
     const balanceTotal = parseFloat(balanceTotalField.innerText);    
     balanceTotalField.innerText = balanceTotal - withdrawInput; */
-
-    updateBalance(withdrawInput , false);
+    const withdrawInput = getInputValue('withdraw-input');
+    if(withdrawInput > 0){
+        updateTotalField('withdraw-total',withdrawInput);
+        updateBalance(withdrawInput , false);
+    }
+    
 })
