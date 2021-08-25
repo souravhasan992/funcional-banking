@@ -4,10 +4,10 @@ function getInputValue(input){
     amountInputField.value = '';
     return amountInput;
 }
-function updateTotalField (totalFieldId,depositeInput){
-    const depositeTotalField = document.getElementById(totalFieldId);
-    const depositeTotal = parseFloat(depositeTotalField.innerText);
-    depositeTotalField.innerText = depositeTotal + depositeInput;
+function updateTotalField (totalFieldId,input){
+    const totalField = document.getElementById(totalFieldId);
+    const total = parseFloat(totalField.innerText);
+    totalField.innerText = total + input;
 }
 
 
